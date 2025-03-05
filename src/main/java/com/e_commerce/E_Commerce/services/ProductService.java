@@ -16,10 +16,7 @@ public class ProductService {
     private ProductRepository productRepository;
     private CategoryRepository categoryRepository;
 
-    public ProductDTO createPrduct(ProductDTO productDTO){
-       /**
-        * id, name, des, price, categoryId
-        **/
+    public ProductDTO createProduct(ProductDTO productDTO){
        //Check Category Id
        CategoryEntity category = categoryRepository.findById(productDTO.getCategoryId())
                 .orElseThrow(()-> new RuntimeException("Category not found!"));

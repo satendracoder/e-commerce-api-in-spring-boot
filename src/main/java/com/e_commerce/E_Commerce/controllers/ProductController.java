@@ -17,7 +17,7 @@ public class ProductController {
     //@_createProduct
     @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO){
-        return new ResponseEntity<>(productService.createPrduct(productDTO), HttpStatus.CREATED);
+        return new ResponseEntity<>(productService.createProduct(productDTO), HttpStatus.CREATED);
     }
     //@update product
     //@delete product
