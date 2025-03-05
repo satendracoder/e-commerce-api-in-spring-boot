@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "category")
 public class CategoryEntity {
 
     @Id
@@ -20,7 +22,7 @@ public class CategoryEntity {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL)
-    private List<ProductEntity> productEntityList;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<ProductEntity> productEntityList = new ArrayList<>();
 
 }
